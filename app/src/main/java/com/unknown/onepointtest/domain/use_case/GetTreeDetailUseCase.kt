@@ -7,12 +7,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import java.lang.Exception
 import javax.inject.Inject
 
 class GetTreeDetailUseCase @Inject constructor(
     private val repo : TreeRepository
 ) {
-
     operator fun invoke(id: String) : Flow<Resource<Tree>>  = flow {
         try {
             emit(Resource.Loading())
@@ -23,6 +23,9 @@ class GetTreeDetailUseCase @Inject constructor(
             emit(Resource.Error(message = e.localizedMessage ?: "Unexpected HttpException occured.."))
         }catch (e: IOException){ //cant reach remote api
             emit(Resource.Error(message = e.localizedMessage ?: "Couldn't reach server.."))
+        }
+        catch(e: Exception){
+            emit(Resource.Error(message = e.localizedMessage ?: "Unexpected error.."))
         }
     }
 }

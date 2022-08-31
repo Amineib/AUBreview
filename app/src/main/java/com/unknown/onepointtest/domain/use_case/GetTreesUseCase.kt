@@ -17,9 +17,9 @@ class GetTreesUseCase @Inject constructor(
             emit(Resource.Loading())
             val data = repo.getTrees(count)
             emit(Resource.Success(data))
-        }catch(e: HttpException){ //http response not successful
+        }catch(e: HttpException){
             emit(Resource.Error(message = e.localizedMessage ?: "Unexpected HttpException occured.."))
-        }catch (e: IOException){ //cant reach remote api
+        }catch (e: IOException){
             emit(Resource.Error(message = e.localizedMessage ?: "Couldn't reach server.."))
         }
     }

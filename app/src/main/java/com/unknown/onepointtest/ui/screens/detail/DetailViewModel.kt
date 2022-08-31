@@ -52,7 +52,6 @@ class DetailViewModel @Inject constructor(
             }
         }.launchIn(viewModelScope)
     }
-
 }
 
 

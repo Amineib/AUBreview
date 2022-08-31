@@ -11,7 +11,7 @@ data class Tree private constructor(
 {
     companion object {
         operator fun invoke(id: String?, name: String?, espece: String?, hauteur : Int?, circonference: Int?,adresse: String?) : Tree{
-            require(id != null && id.isNotBlank() && id.isNotEmpty())
+            require((id != null) && id.isNotBlank() && id.isNotEmpty())
             return Tree(id, validateString(name), validateString(espece), hauteur?: 0, circonference?: 0, validateString(adresse))
         }
     }

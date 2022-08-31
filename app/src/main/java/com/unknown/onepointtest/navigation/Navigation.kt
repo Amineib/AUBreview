@@ -35,9 +35,7 @@ fun Navigation(
                 }
             )
         ){
-            DetailScreen(
-                id = it.arguments!!.getString("id")
-            )
+            DetailScreen()
         }
     }
 }

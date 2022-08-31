@@ -1,8 +1,6 @@
 package com.unknown.onepointtest.data.remote
 
-import com.unknown.onepointtest.data.remote.response.RecordResponse
 import com.unknown.onepointtest.data.remote.response.TreeListResponse
-import com.unknown.onepointtest.data.remote.response.RecordsResponse
 import com.unknown.onepointtest.data.remote.response.TreeDetailResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
