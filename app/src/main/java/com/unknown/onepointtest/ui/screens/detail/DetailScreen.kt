@@ -32,14 +32,15 @@ fun DetailScreen(
             TreeItem(onNavigateTo = {},
                 tree = it
             )
+            Spacer(modifier = Modifier.padding(16.dp))
+            Text(text = "Lorem Ipsum", style = MaterialTheme.typography.h3, modifier = Modifier.padding(start = 16.dp))
+            Text(modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 8.dp),
+                text = Dummy.dummyData.get(Random.nextInt(0, Dummy.dummyData.lastIndex)))
         }
         
-        Spacer(modifier = Modifier.padding(16.dp))
-        Text(text = "Lorem Ipsum", style = MaterialTheme.typography.h3, modifier = Modifier.padding(start = 16.dp))
-        Text(modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 8.dp),
-            text = Dummy.dummyData.get(Random.nextInt(0, Dummy.dummyData.lastIndex)))
+
     }
 }
 

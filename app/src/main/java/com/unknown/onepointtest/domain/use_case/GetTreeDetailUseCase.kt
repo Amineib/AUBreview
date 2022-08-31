@@ -16,6 +16,7 @@ class GetTreeDetailUseCase @Inject constructor(
     operator fun invoke(id: String) : Flow<Resource<Tree>>  = flow {
         try {
             emit(Resource.Loading())
+            kotlinx.coroutines.delay(1500) //simulate network call taking too long
             val data  = repo.getTree(id)
             emit(Resource.Success(data))
         }

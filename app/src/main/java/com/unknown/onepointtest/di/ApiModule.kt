@@ -2,6 +2,7 @@ package com.unknown.onepointtest.di
 
 import com.google.gson.GsonBuilder
 import com.unknown.onepointtest.data.remote.TreeApi
+import com.unknown.onepointtest.util.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -40,7 +41,7 @@ object ApiModule {
         .addConverterFactory(GsonConverterFactory.create(
             GsonBuilder().serializeNulls().create()
         ))
-        .baseUrl("https://opendata.paris.fr/api/v2/")
+        .baseUrl(Constants.API_BASE_URL)
         .client(okHttpClient)
         .build()
 

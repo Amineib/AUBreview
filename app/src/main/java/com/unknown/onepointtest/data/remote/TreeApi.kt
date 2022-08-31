@@ -7,6 +7,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface TreeApi {
+
     @GET("catalog/datasets/les-arbres/records")
     suspend fun getTrees(
         @Query("rows") rows : Int
@@ -16,4 +17,5 @@ interface TreeApi {
     suspend fun getTreeDetail(
         @Path("treeId") TreeId : String
     ): TreeDetailResponse
+
 }
